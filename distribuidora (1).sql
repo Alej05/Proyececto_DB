@@ -538,3 +538,31 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+/*
+
+
+ //  recupera todos los productos cuyo precio es mayor o igual a 2.5 y luego los agrupa por el valor de "precio".
+SELECT * FROM producto WHERE precio >= 2.5 GROUP BY precio;
+
+//Buscar todas las rutas realizadas por un conductor con la id "5"
+SELECT * FROM ruta WHERE id_conductor = 5;
+
+//Buscar todos los empleados que iniciaron en una fecha específica
+SELECT * FROM empleado WHERE fecha_inicio = '2020-01-04';
+
+//Buscar todos los pedidos que incluyen un producto específico:
+SELECT * FROM pedido WHERE id_producto = '5';
+ //Obtener el nombre del empleado y su sueldo que tiene un sueldo mayor al promedio de sueldos de todos los empleados:
+SELECT nombre, sueldo FROM empleado WHERE sueldo > (SELECT AVG(sueldo) FROM empleado);
+//Obtener el promedio de sueldo de los empleados:
+SELECT AVG(sueldo) as promedio_sueldo FROM empleado;
+//Obtener el número de pedidos realizados en una fecha específica:
+SELECT COUNT(*) as cantidad_pedidos FROM pedido WHERE fecha_pedido 
+ //Obtener el nombre de los conductores y la cantidad de rutas que han realizado:
+SELECT e.nombre, COUNT(*) as cantidad_rutas FROM empleado e INNER JOIN ruta r ON e.id_empleado = r.id_conductor GROUP BY e.nombre;
+
+*/
